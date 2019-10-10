@@ -5,3 +5,7 @@ all:
 clean:
 
 	rm -f executable
+	
+exp:
+
+	g++ -o executable experimentalmain.cpp
