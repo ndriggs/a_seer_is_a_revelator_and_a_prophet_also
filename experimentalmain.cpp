@@ -75,7 +75,7 @@ int main(int argc, char *argv[]){
             map_output << it->first << ", " << it->second << endl;
         }
         map_output.close();
-        
+        /**
         //creating scripture, take 1
         string state = "";
         cout << endl << "Take 1!" << endl;
@@ -104,7 +104,7 @@ int main(int argc, char *argv[]){
             } 
             i += 1;
         }**/
-        
+        /**
         //creating scripture --- take 2!
         srand(time(NULL)); //initialize random rumber generator
         state = "";
@@ -115,6 +115,7 @@ int main(int argc, char *argv[]){
            cout << state << " ";
         }
         cout << endl;
+        **/
         
         //let's use a map of a list and vector!
         const int M = 2;
@@ -131,20 +132,23 @@ int main(int argc, char *argv[]){
         }
         
         //now let's print it~ we're publishing baby!
+        srand(time(NULL)); 
         context.clear();
         for(int i = 0; i < M; i++){
             context.push_back("");
         }
         cout << endl << "The best one yet!" << endl;
+        bool in_quote = false;
         for(int i = 0; i < 100; i++){
             int index = rand() % map3point0[context].size();
-            cout << map3point0[context][index] << " ";
-            bool in_quote = false;
+            cout << " " << map3point0[context][index];
             size_t has_period = map3point0[context][index].find('.');
-            if((map3point0[context][index] == "saying") || (map3point0[context][index] == "said")){
+            if((map3point0[context][index] == "saying") || (map3point0[context][index] == "said") || (map3point0[context][index] == "sayeth")){
                 cout << " \"";
                 in_quote = true;
-            } else if (has_period !=)
+            } else if ((has_period != string::npos) && in_quote){
+                cout << "\"";
+            }
             context.push_back(map3point0[context][index]);
             context.pop_front();
         }
